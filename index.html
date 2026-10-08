@@ -140,20 +140,72 @@ The website features a clean, elegant design, intuitive navigation, and a fully 
 								<div class="container">
 									<h3>Contact Us</h3>
 									<p>Whether you have a question, need a quote, or just want to chat about your ideas — we’d love to hear from you. Fill out the form and we’ll get back to you as soon as possible. Let’s build something great together.</p>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
+									
+<form name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field">
+
+    <input type="hidden" name="form-name" value="contact" />
+
+    <p style="display:none;">
+        <label>
+            Do not fill this out:
+            <input name="bot-field" />
+        </label>
+    </p>
+
+    <div class="row gtr-uniform">
+
+        <div class="col-6 col-12-xsmall">
+            <input type="text"
+                   name="name"
+                   id="name"
+                   placeholder="Name"
+                   required />
+        </div>
+
+        <div class="col-6 col-12-xsmall">
+            <input type="email"
+                   name="email"
+                   id="email"
+                   placeholder="Email"
+                   required />
+        </div>
+
+        <div class="col-12">
+            <input type="text"
+                   name="subject"
+                   id="subject"
+                   placeholder="Subject"
+                   required />
+        </div>
+
+        <div class="col-12">
+            <textarea name="message"
+                      id="message"
+                      placeholder="Tell us about your project..."
+                      rows="6"
+                      required></textarea>
+        </div>
+
+        <div class="col-12">
+            <ul class="actions">
+                <li>
+                    <input type="submit"
+                           class="primary"
+                           value="Send Message" />
+                </li>
+                <li>
+                    <input type="reset"
+                           value="Reset Form" />
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</form>
+
 								</div>
 							</section>
 
